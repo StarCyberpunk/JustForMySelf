@@ -1,0 +1,40 @@
+1)//Init
+            Random rnd = new Random();
+            int[] n = new int[20];
+           
+            for(int i = 0; i < n.Length; i++)
+            {
+                n[i] = rnd.Next(0, 9);
+            }
+            Array.Sort(n);
+            //copy array
+            int[] nn = new int[n.Length];
+            for (int i = 0; i < n.Length; i++)
+            {
+                nn[i] = n[i];
+            }
+            //take pair
+            for (int i = 0; i < n.Length-1; i++)
+            {
+                if (nn[i] == nn[i + 1])
+                {
+                    nn[i] = Int32.MinValue;
+                    nn[i+1] = Int32.MinValue;
+                }  
+                
+            }
+            //output
+            for (int i = 0; i < nn.Length ; i++)
+            {
+                if (nn[i] != Int32.MinValue)
+                {
+                    Console.WriteLine(nn[i]);
+                }
+
+            }
+            Console.ReadKey();
+
+2)SELECT a.ID, a.CHIEF, a.SALARY a.NAME 
+FROM EMPLOYEE a, EMPLOYEE b 
+WHERE (a.CHIEF==b.ID AND a.SALARY > b.SALARY) or (a.ID==b.CHIEF AND a.SALARY < b.SALARY)
+3)25 тыс
